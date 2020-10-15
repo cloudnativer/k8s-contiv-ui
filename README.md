@@ -74,7 +74,7 @@ Successfully tagged k8s-contiv-ui:v0.1
 
 <br>
 
-
+您可以实际安装部署来体验更多的功能！
 
 
 
