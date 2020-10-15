@@ -4,7 +4,7 @@ k8s-contiv-ui已经全部修改为中文版本，可以非常方便母语为中�
 
 
 # 安装部署
-由于k8s-contiv-ui是底层是运行在contiv-netplugin这个cni插件(https://github.com/contiv/netplugin)之上，所以请事先确保contiv-netplugin插件已经在你的k8s集群上正常运转。
+由于k8s-contiv-ui是底层是运行在<a href="https://github.com/contiv/netplugin">contiv-netplugin</a>这个cni插件之上，所以请事先确保contiv-netplugin插件已经在你的k8s集群上正常运转。
 
 ## 制作镜像
 
