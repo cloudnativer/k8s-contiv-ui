@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: k8s-contiv-ui
+  name: k8s-contiv-ui
+  namespace: kube-system
+spec:
+  ports:
+  - port: 1443
+    protocol: TCP
+    targetPort: 1443
+  clusterIP: 172.30.0.5
+  selector:
+    app: k8s-contiv-ui
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-contiv-ui
+  namespace: kube-system
+  labels:
+    app: k8s-contiv-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-contiv-ui
+  template:
+    metadata:
+      labels:
+        app: k8s-contiv-ui
+    spec:
+      containers:
+      - name: k8s-contiv-ui
+        image: k8s-contiv-ui:v0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 2
+            memory: 2Gi
+          limits:
+            cpu: 6
+            memory: 8Gi
+        ports:
+        - containerPort: 1443
+        args:
+        - --listen-address=0.0.0.0:1443
+        - --netmaster-address=192.168.130.30:9999
+        - --data-store-driver=etcd
+        - --data-store-address=etcd://192.168.130.30:2379
+        - --tls-certificate=/local_certs/cert.pem
+        - --tls-key-file=/local_certs/local.key
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: timezone
+          readOnly: true
+      volumes:
+      - name: timezone
+        hostPath:
+          path: /etc/localtime
+
+

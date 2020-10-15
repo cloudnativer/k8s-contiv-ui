@@ -1,0 +1,82 @@
+<div class="page header">
+    <div class="ui top attached menu mainMenu" align="right" style="background-color:#326DE6;width:100%;height:48px">
+        <h1 class="header" style="margin-top: 2px; float: left; white-space: nowrap; ">
+            <img class="ui image logo" src="images/cloud-logo.png"><span style="font-size:21px;color:#fff;left:-8px;top:2px;position:relative">K8S云网平台</span>
+        </h1>
+        <div class="utilnav">
+
+            <button type="button" class="circular ui mini icon button">
+                <i class="large user icon"></i>
+            </button>
+
+            <span style="font-size:15px;color:#fff;position:relative">{{username}}</span>
+            <div class="ui floating labeled icon dropdown">
+                <i class="dropdown icon"></i>
+                <div class="menu profile">
+                    <div class="item" onclick="$('#user-profile-modal').modal('show')" *ngIf="localuser">
+                        <span class="text">用户设置</span></div>
+                    <div class="item" (click)="logout()">
+                        <span class="text">注销</span></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<notification></notification>
+
+<div id="user-profile-modal" class="ui small modal">
+    <div class="header">用户设置</div>
+    <div class="content">
+        <userprofileedit #userprofile (close)="closeProfile()" [username]="username" [displayType]="ProfileDisplayType.modal"></userprofileedit>
+    </div>
+    <div class="actions">
+        <div class="ui basic deny button modalBtn">取消</div>
+        <div class="ui primary button modalBtn" (click)="userprofile.saveUser(true)">
+            保存
+        </div>
+    </div>
+</div>
+
+<div id="sidebar" class="ui visible left vertical sidebar icon labeled menu mainNav">
+    <span *ngIf="!firstRun">
+
+        <a class="item" [routerLink]="['dashboard']" routerLinkActive="active">
+            平台概况
+        </a>
+
+        <a class="item" [routerLink]="['networks']" routerLinkActive="active">
+            网络管理
+        </a>
+
+        <a class="item" [routerLink]="['housjtest']" routerLinkActive="active">
+            测试菜单
+        </a>
+
+        <a class="item" [routerLink]="['servicelbs']" routerLinkActive="active" *verifydom="'docker'">
+            服务负载
+        </a>
+
+        <a class="item" [routerLink]="['applicationgroups']" routerLinkActive="active">
+            应用策略组
+        </a>
+
+        <a class="item" [routerLink]="['appprofiles']" routerLinkActive="active" *verifydom="'aci'">
+            ACI配置
+        </a>
+
+        <a class="item" [routerLink]="['networkpolicies']" routerLinkActive="active">
+            安全隔离与QoS
+        </a>
+
+        <a class="item" [routerLink]="['settings']" routerLinkActive="active" *verifydom="'admin'">
+            全局设置
+        </a>
+    </span>
+</div>
+
+<div id="pageContent">
+    <router-outlet></router-outlet>
+</div>
