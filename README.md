@@ -31,6 +31,17 @@ Successfully tagged k8s-contiv-ui:v0.1
 
 ` kubectl apply -f yaml/k8s-contiv-ui.yaml `
 
+## 登录使用
+
+把k8s-contiv-ui服务暴露到k8s集群外，然后使用浏览器打开https://IP:1443
+<br>
+输入默认的用户名admin/密码admin登录
+<br>
+
+![k8s-contiv-ui](docs/images/readme-6.jpg)
+
+<br>
+
 
 # 功能介绍
 
@@ -38,7 +49,7 @@ Successfully tagged k8s-contiv-ui:v0.1
 
 <br>
 
-![k8s-contiv-ui](docs/images/readme-0.jpg)
+![k8s-contiv-ui](docs/images/readme-7.jpg)
 
 <br>
 
