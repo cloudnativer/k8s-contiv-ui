@@ -29,6 +29,14 @@ Successfully tagged k8s-contiv-ui:v0.1
 
 # 功能介绍
 
+## 平台概况
+
+<br>
+
+![k8s-contiv-ui](docs/images/readme-0.jpg)
+
+<br>
+
 ## 租户管理
 
 <br>
