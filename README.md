@@ -1,6 +1,8 @@
 # 1  平台说明
 <a href="https://github.com/cloudnativer/k8s-contiv-ui">k8s-contiv-ui</a>是一款基于contiv-ui优化后的k8s云网编排管理平台，覆盖k8s网络中常用的多租户管理、子网管理、QoS带宽限速、安全隔离等功能，底层可以兼容VxLan和VLan网络架构。
 k8s-contiv-ui已经全部修改为中文版本，可以非常方便母语为中文的个人或组织来使用。
+<br>
+K8s-contiv-ui is a kubernetes cloud network scheduling management platform based on contiv UI optimization.K8s-contiv-ui covers the functions commonly used in k8s network, such as multi tenant management, subnet management, QoS bandwidth limiting, security isolation and so on. The underlying layer can be compatible with vxlan and VLAN network architecture. K8s-contiv-ui has been modified to Chinese version, which can be used by individuals or organizations who are familiar with Chinese.
 
 
 # 2  安装部署
