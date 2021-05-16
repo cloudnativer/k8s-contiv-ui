@@ -15,7 +15,7 @@ Since k8s-contiv-ui is the underlying layer and runs on the CNI plug-in contiv-n
 
 ```
 # docker load < basic-dep/images/auth-proxy-image.tar
-# docker build -t k8s-contiv-ui:v0.1 . 
+# docker build -t cloudnativer/k8s-contiv-ui:v0.1 . 
 
     Sending build context to Docker daemon  46.48MB
     Step 1/3 : FROM auth_proxy:1.2.0
