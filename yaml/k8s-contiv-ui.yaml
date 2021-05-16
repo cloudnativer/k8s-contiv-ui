@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: k8s-contiv-ui
-        image: k8s-contiv-ui:v0.1
+        image: cloudnativer/k8s-contiv-ui:v0.1
         imagePullPolicy: IfNotPresent
         resources:
           requests:
